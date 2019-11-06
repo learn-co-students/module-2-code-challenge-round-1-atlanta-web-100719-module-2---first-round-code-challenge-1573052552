@@ -1,0 +1,23 @@
+<h1>Edit <%= @heroine.name %></h1>
+
+<% if @heroine.errors.any? %>
+  <div id="error_explanation">
+    <h3>
+      <%= pluralize(@heroine.errors.count, "error") %>
+      prohibited this heroine from being saved:
+    </h3>
+ 
+    <ul>
+    <% @heroine.errors.full_messages.each do |msg| %>
+      <li><strong><%= msg %></strong></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  
+<%= form_for @heroine do |f| %>
+  Super Name: <%= f.text_field :super_name %><br>
+  Power: <%= f.collection_select(:power_id, Power.all, :id, :name) %><br>
+  <%= f.submit %>
+<% end %>
