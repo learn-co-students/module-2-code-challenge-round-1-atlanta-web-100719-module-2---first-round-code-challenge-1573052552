@@ -1,3 +1,3 @@
 class Heroine < ApplicationRecord
-  has_many :powers
+  belongs_to :power
 end

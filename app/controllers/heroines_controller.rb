@@ -10,7 +10,7 @@ class HeroinesController < ApplicationController
     end
 
     def show
-      @heroine = Heroine.all.find_by(id: params[:id])
+      @heroine = Heroine.find_by(id: params[:id])
     end
 
     def edit

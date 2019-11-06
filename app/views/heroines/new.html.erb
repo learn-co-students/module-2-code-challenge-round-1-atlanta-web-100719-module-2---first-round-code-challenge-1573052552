@@ -1,6 +1,6 @@
 <%= form_for @heroine, method: :post do |f| %>
-<%= f.text_field :name %> <br>
-<%= f.text_field :super_name %> <br>
-<%= f.text_field :power_id %> <br>
+Name: <%= f.text_field :name %> <br>
+Alias: <%= f.text_field :super_name %> <br>
+Power: <%= f.text_field :power_id %> <br>
 <%= f.submit %>
 <% end %>
