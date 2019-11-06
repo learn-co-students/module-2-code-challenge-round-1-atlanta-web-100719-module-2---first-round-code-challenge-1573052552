@@ -3,6 +3,9 @@ class HeroinesController < ApplicationController
 
   def index
     @heroines = Heroine.all
+    if params[:search_power]
+      @heroines = Heroine.all.select { |heroine| heroine.power_id == params[:search_power][:id].to_i }
+    end
   end
 
   def show
