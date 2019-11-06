@@ -1,9 +1,17 @@
 <h2>All Heroines</h2>
 
+
+<%= form_with(url: heroines_path, method: "get") do %>
+  <%= label_tag(:search_power, "Search by Superpower:") %>
+  <%= collection_select(:search_power,:id , Power.all, :id, :name) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+    
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
