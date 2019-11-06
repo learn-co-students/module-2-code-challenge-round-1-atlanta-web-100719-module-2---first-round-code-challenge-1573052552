@@ -4,6 +4,7 @@
   <% @heroines.each do |heroine| %>
     <li>
       <%= heroine.super_name %>
+      <%= link_to "Show" , heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
