@@ -10,7 +10,7 @@ class HeroinesController < ApplicationController
   def create
     filtered_params = params.require(:heroine).permit(:name, :super_name, :power_id)
     @heroine = Heroine.create(filtered_params)
-    redirect_to heroines_path(@heroine)
+    redirect_to heroine_path(@heroine)
   end
 
   def show
