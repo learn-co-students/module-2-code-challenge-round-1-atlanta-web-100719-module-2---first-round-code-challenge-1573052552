@@ -6,4 +6,20 @@ class HeroinesController < ApplicationController
   def show 
     @heroine = Heroine.find_by(:id => params[:id])
   end 
+
+  def new
+    @heroine = Heroine.new
+  end 
+
+  def create
+    @heroine = Heroine.create(heroine_params)
+    # byebug
+    redirect_to heroine_path(@heroine)
+  end 
+
+  private
+  def heroine_params
+  filtered_params = params.require(:heroine).permit(:name,:super_name, :power_id)
+  end 
+
 end
