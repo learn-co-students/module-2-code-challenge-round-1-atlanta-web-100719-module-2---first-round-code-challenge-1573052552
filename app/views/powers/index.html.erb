@@ -4,6 +4,7 @@
   <% @powers.each do |power| %>
     <li>
       <%= power.name %>
+      <%= link_to "Show", power_path(power) %>
       <br>
       Description: <%= power.description %>
     </li>
